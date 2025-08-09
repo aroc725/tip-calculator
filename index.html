@@ -6,10 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tip Calculator</title>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
-        <h1>Hello, Git!</h1>
-        <p>This is my first version-controlled web project.</p>
-        <script src="script.js"></script>
+        <h1>Tip Calculator</h1>
+        <p>Complete and submit the form below to calculate the tip.</p>
+        <form id="tipCalculatorForm" onsubmit="return false;">
+            <label for="billAmount">Please enter the bill amount:</label><br>
+            <input type="number" min="0" step="0.01" id="billAmount" name="billAmount"><br><br>
+            <label for="tipPercentage">Tip Percentage</label>
+            <select id="tipPercentage">
+                <option value="0">Select a tip percentage.</option>
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+                <option value="25">25%</option>
+            </select><br><br>
+            <input type="submit" value="Calculate Tip"
+                onclick="javascript: displayCalculatedTip(document.getElementById('tipCalculatorForm'), document.getElementById('message'));">
+            <input type="button" value="Reset"
+                onclick="javascript: resetForm(document.getElementById('tipCalculatorForm'), document.getElementById('message'));">
+        </form><br>
+        <div id="message"></div><br>
     </body>
 </html>
